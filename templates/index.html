@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Diabetes Prediction</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{{url_for('static',filename='images/icons/favicon.ico') }}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/animate/animate.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/select2/select2.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/main.css') }}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="bg-contact3" style="background-image: url('{{url_for('static',filename='images/bg-01.jpg') }}');">
+		<div class="container-contact3">
+			<div class="wrap-contact3">
+				<form method='post' action="{{ url_for('predict')}}" class="contact3-form validate-form">
+					<span class="contact3-form-title">
+						Diabetes Prediction
+					</span>
+					<div><div>
+							<h5>{{msg}}</h5>
+					</div></div>
+					
+					<div class="wrap-contact3-form-radio">
+						<div class="wrap-input3 validate-input">
+						<label class="input3">NAME</label>
+						<input class="input3" type="text" name="name" placeholder="Your Name">
+						<span class="focus-input3"></span>
+					</div>
+					<div class="wrap-input3 validate-input">
+						<label class="input3">AGE</label>
+						<input class="input3" type="text" name="age" placeholder="Your Age">
+						<span class="focus-input3"></span>
+					</div>
+
+					<div class="wrap-input3 validate-input">
+						<label class="input3">NUMBER OF TIMES PREGNANT</label>
+						<input class="input3" type="text" name="pregnancies" placeholder="eg 1, 2">
+						<span class="focus-input3"></span>
+					</div>
+					<div class="wrap-input3 validate-input">
+						<label class='input3'>PLASMA GLUCOSE CONCENTRATION</label>
+						<input class="input3" type="text" name="glucose" placeholder="eg 89">
+						<span class="focus-input3"></span>
+					</div>
+					<div class="wrap-input3 validate-input">
+						<label class="input3">DIASTOLIC BLOOD PRESSURE</label>
+						<input class="input3" type="text" name="bloodpresure" placeholder="eg 76 (mm Hg)">
+						<span class="focus-input3"></span>
+					</div>
+					<div class="wrap-input3 validate-input">
+						<label class="input3">TRICEPS SKIN FOLD THICKNESS </label>
+						<input class="input3" type="text" name="skinthickness" placeholder="eg 30 (mm)">
+						<span class="focus-input3"></span>
+					</div>
+					<div class="wrap-input3 validate-input">
+						<label class="input3">2-HOUR SERUM INSULIN</label>
+						<input class="input3" type="text" name="insulin" placeholder="eg 230 (mu U/ml)">
+						<span class="focus-input3"></span>
+					</div>
+					<div class="wrap-input3 validate-input">
+						<label class="input3">BODY MASS INDEX </label>
+						<input class="input3" type="text" name="BMI" placeholder="weight in kg/(height in m)^2">
+						<span class="focus-input3"></span>
+					</div>
+					<div class="wrap-input3 validate-input">
+						<label class="input3">Diabetes pedigree function</label>
+						<input class="input3" type="text" name="diabetesprdi" placeholder="eg 0.54">
+						<span class="focus-input3"></span>
+					</div>
+
+					<div class="container-contact3-form-btn">
+						<button class="contact3-form-btn">
+							Submit
+						</button>
+						</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="{{url_for('static',filename='vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{url_for('static',filename='vendor/bootstrap/js/popper.js') }}"></script>
+	<script src="{{url_for('static',filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{url_for('static',filename='vendor/select2/select2.min.js') }}"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="{{url_for('static',filename='js/main.js') }}"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13') }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>
