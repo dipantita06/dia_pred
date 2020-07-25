@@ -13,7 +13,7 @@ scaler=pickle.load(open('scaler.pkl', 'rb')
 
 
 @app.route("/",methods=["GET"])
-def home():
+def Home():
     return render_template("index.html")
 
 @app.route("/predict",methods=["POST"])
