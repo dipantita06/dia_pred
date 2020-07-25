@@ -9,9 +9,7 @@ from sklearn.preprocessing import StandardScaler
 app=Flask(__name__)
 
 model = pickle.load(open('random_forest_diabetes_prediction.pkl', 'rb'))
-infile = open("scaler.pkl",'rb')
-scaler = pickle.load(infile)
-infile.close()
+scaler=pickle.load(open('scaler.pkl', 'rb')
 
 
 @app.route("/",methods=["GET"])
